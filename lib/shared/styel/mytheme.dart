@@ -19,7 +19,8 @@ class MyThemeData {
           surface: Colors.grey,
           onSurface: Colors.black),
       appBarTheme: const AppBarTheme(
-          titleTextStyle: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+        actionsIconTheme: IconThemeData(size: 40),
+          titleTextStyle: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
           centerTitle: true,
           backgroundColor: primaryColor,
           iconTheme: IconThemeData(color: Colors.white)),

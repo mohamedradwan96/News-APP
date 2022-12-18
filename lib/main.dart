@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:news/shared/styel/mytheme.dart';
 
-import 'layout/home_screen.dart';
+import 'layout/home_layout.dart';
 
 void main() {
   runApp( MyApp());
@@ -12,11 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: HomeScreen.routeName ,
+      initialRoute: Homelayout.routeName ,
       routes: {
-        HomeScreen.routeName:(context)=>HomeScreen(),
-
+        Homelayout.routeName:(context)=>Homelayout(),
       },
+      theme: MyThemeData.lightTheme,
 
     );
   }

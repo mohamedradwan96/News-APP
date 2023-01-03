@@ -6,11 +6,12 @@ import 'package:news/models/SourcesResponse.dart';
 
 class NewsResponse {
   NewsResponse({
-      this.status, 
-      this.totalResults,
+    this.status,
+    this.totalResults,
     this.code,
     this.message,
-      this.articles,});
+    this.articles,
+  });
 
   NewsResponse.fromJson(dynamic json) {
     status = json['status'];
@@ -39,7 +40,6 @@ class NewsResponse {
     }
     return map;
   }
-
 }
 
 /// source : {"id":"abc-news","name":"ABC News"}
@@ -53,14 +53,15 @@ class NewsResponse {
 
 class Articles {
   Articles({
-      this.source, 
-      this.author, 
-      this.title, 
-      this.description, 
-      this.url, 
-      this.urlToImage, 
-      this.publishedAt, 
-      this.content,});
+    this.source,
+    this.author,
+    this.title,
+    this.description,
+    this.url,
+    this.urlToImage,
+    this.publishedAt,
+    this.content,
+  });
 
   Articles.fromJson(dynamic json) {
     source = json['source'] != null ? Sources.fromJson(json['source']) : null;
@@ -95,9 +96,7 @@ class Articles {
     map['content'] = content;
     return map;
   }
-
 }
 
 /// id : "abc-news"
 /// name : "ABC News"
-

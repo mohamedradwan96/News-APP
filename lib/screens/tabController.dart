@@ -3,8 +3,10 @@ import 'package:news/models/SourcesResponse.dart';
 import 'package:news/screens/tab_items.dart';
 import 'package:news/shared/network/remote/apiManger.dart';
 import 'package:news/shared/styel/colors.dart';
+import 'package:provider/provider.dart';
 
 import '../models/NewsResponse.dart';
+import '../provider/app_provider.dart';
 import 'news_items.dart';
 
 class TabControllerScreen extends StatefulWidget {
@@ -21,6 +23,7 @@ class _TabControllerScreenState extends State<TabControllerScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var settingsProvider = Provider.of<MyProvider>(context);
     return DefaultTabController(
         length: widget.sources.length,
         child: Column(
@@ -42,7 +45,7 @@ class _TabControllerScreenState extends State<TabControllerScreen> {
                   .toList(),
             ),
             FutureBuilder<NewsResponse>(
-              future: ApiManger.GetNews(widget.sources[selectedindex].id!),
+              future: ApiManger.GetNews(sourceId:widget.sources[selectedindex].id,currentLang:settingsProvider.languageCode ),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const Center(child: CircularProgressIndicator());
